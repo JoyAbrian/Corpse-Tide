@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6734087503895873174}
   - component: {fileID: 5349000170441339811}
   - component: {fileID: 4507405868348643603}
+  - component: {fileID: 6029164377927317008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -199,6 +200,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 6425018214998008481}
+  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
+  crosshair: {fileID: 0}
+--- !u!114 &6029164377927317008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443149893026897888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d859cdc585c96d444b2f4103a3d90913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoText: {fileID: 0}
+  totalAmmoText: {fileID: 0}
 --- !u!1 &7379162008913856938
 GameObject:
   m_ObjectHideFlags: 0

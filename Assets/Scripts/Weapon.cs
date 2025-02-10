@@ -7,9 +7,10 @@ public class Weapon : MonoBehaviour
     public float range = 100f;
     public float fireRate = 0.5f;
     public float impactForce = 30f;
+    public float reloadTime = 2f;
+    public int magazineSize = 30;
 
     [Header("Weapon Components")]
     public Transform bulletOut;
     public GameObject gunshotEffect;
-    public GameObject impactEffect;
 }

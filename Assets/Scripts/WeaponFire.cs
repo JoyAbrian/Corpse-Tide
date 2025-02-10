@@ -1,16 +1,35 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 public class WeaponFire : MonoBehaviour
 {
     public Weapon weapon;
+    public GameObject impactEffect;
+    public Image crosshair;
+
     private float nextFireTime = 0f;
+    private bool isReloading = false;
+
+    private void Start()
+    {
+        GlobalVariables.playerPrimaryAmmo = weapon.magazineSize;
+        GlobalVariables.playerPrimaryTotalAmmo = weapon.magazineSize * 4;
+    }
 
     private void Update()
     {
+        if (isReloading) return;
+
         if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + weapon.fireRate;
             Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(Reload());
         }
     }
 
@@ -28,9 +47,9 @@ public class WeaponFire : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, weapon.range))
         {
-            if (weapon.impactEffect != null)
+            if (impactEffect != null)
             {
-                GameObject impact = Instantiate(weapon.impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             }
 
             Rigidbody rb = hit.collider.GetComponent<Rigidbody>();
@@ -39,5 +58,21 @@ public class WeaponFire : MonoBehaviour
                 rb.AddForce(-hit.normal * weapon.impactForce, ForceMode.Impulse);
             }
         }
+        GlobalVariables.playerPrimaryAmmo--;
+    }
+
+    private IEnumerator Reload()
+    {
+        isReloading = true;
+        weapon.gameObject.SetActive(false);
+        crosshair.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(weapon.reloadTime);
+        GlobalVariables.playerPrimaryTotalAmmo -= weapon.magazineSize - GlobalVariables.playerPrimaryAmmo;
+        GlobalVariables.playerPrimaryAmmo = weapon.magazineSize;
+
+        weapon.gameObject.SetActive(true);
+        crosshair.gameObject.SetActive(true);
+        isReloading = false;        
     }
 }
