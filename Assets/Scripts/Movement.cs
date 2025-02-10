@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class FPSController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float walkSpeed = 4f;
