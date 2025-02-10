@@ -366,7 +366,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 102.98, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74883365
 MonoBehaviour:
@@ -672,11 +672,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &709824458 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 677079850636405038, guid: cda672256e912be46a70e6e0042535cb, type: 3}
-  m_PrefabInstance: {fileID: 6045697862841060347}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &769607701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,10 +1704,6 @@ PrefabInstance:
       propertyPath: totalAmmoText
       value: 
       objectReference: {fileID: 1214310907}
-    - target: {fileID: 4507405868348643603, guid: cda672256e912be46a70e6e0042535cb, type: 3}
-      propertyPath: weaponTransform
-      value: 
-      objectReference: {fileID: 709824458}
     - target: {fileID: 5443149893026897888, guid: cda672256e912be46a70e6e0042535cb, type: 3}
       propertyPath: m_Name
       value: Player

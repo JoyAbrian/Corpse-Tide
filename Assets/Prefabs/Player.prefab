@@ -207,6 +207,12 @@ MonoBehaviour:
   reloadingText: {fileID: 0}
   semiAutoText: {fileID: 0}
   fullAutoText: {fileID: 0}
+  baseSpread: 0.01
+  maxSpread: 0.1
+  spreadIncreaseRate: 0.005
+  spreadRecoveryRate: 0.02
+  crosshairExpandAmount: 10
+  crosshairRecoverySpeed: 2
 --- !u!1 &7379162008913856938
 GameObject:
   m_ObjectHideFlags: 0
