@@ -226,13 +226,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5be53a1af2d8848b2ee704b3386254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: UMP-45
+  weaponIcon: {fileID: 21300000, guid: fe15fd8e1f366504ea66b56436836807, type: 3}
+  hasFireType: 1
   damage: 10
   range: 100
   fireRate: 0.5
   impactForce: 30
+  reloadTime: 2
+  magazineSize: 30
   bulletOut: {fileID: 581266518262643659}
   gunshotEffect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
-  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
 --- !u!1 &989163940923786535
 GameObject:
   m_ObjectHideFlags: 0

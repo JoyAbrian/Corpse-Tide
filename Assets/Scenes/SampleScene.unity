@@ -921,8 +921,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1182702985}
+  - component: {fileID: 1182702986}
   m_Layer: 5
-  m_Name: Primary Weapon UI
+  m_Name: Weapon UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,6 +952,29 @@ RectTransform:
   m_AnchoredPosition: {x: -408, y: -196}
   m_SizeDelta: {x: 114.90985, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1182702986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182702984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f154801fcb9c4cd4aa3b98001ce7deec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponIconImage: {fileID: 41118861}
+  crosshair: {fileID: 74883365}
+  ammoText: {fileID: 2111408311}
+  ammoLeftText: {fileID: 1637693870}
+  totalAmmoText: {fileID: 1214310907}
+  reloadingText: {fileID: 19322227}
+  fireModeText: {fileID: 408570341}
+  semiAutoText: {fileID: 413137775}
+  fullAutoText: {fileID: 1207219032}
+  crosshairExpandAmount: 10
+  crosshairRecoverySpeed: 2
 --- !u!1 &1207219030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 677079850636702990, guid: cda672256e912be46a70e6e0042535cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507405868348643603, guid: cda672256e912be46a70e6e0042535cb, type: 3}
       propertyPath: ammoText
       value: 
@@ -1684,6 +1712,10 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 74883365}
+    - target: {fileID: 4507405868348643603, guid: cda672256e912be46a70e6e0042535cb, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 1182702986}
     - target: {fileID: 4507405868348643603, guid: cda672256e912be46a70e6e0042535cb, type: 3}
       propertyPath: ammoLeftText
       value: 
@@ -1707,6 +1739,10 @@ PrefabInstance:
     - target: {fileID: 5443149893026897888, guid: cda672256e912be46a70e6e0042535cb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425018214998008481, guid: cda672256e912be46a70e6e0042535cb, type: 3}
+      propertyPath: magazineSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9152415245431291940, guid: cda672256e912be46a70e6e0042535cb, type: 3}
       propertyPath: m_LocalPosition.x

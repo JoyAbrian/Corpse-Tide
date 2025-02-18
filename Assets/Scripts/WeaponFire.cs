@@ -1,21 +1,11 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
-using UnityEngine.UI;
 
 public class WeaponFire : MonoBehaviour
 {
     public Weapon weapon;
     public GameObject impactEffect;
-    public Image crosshair;
-
-    [Header("UI Elements")]
-    public TextMeshProUGUI ammoLeftText;
-    public TextMeshProUGUI totalAmmoText;
-    public GameObject ammoText;
-    public TextMeshProUGUI reloadingText;
-    public TextMeshProUGUI semiAutoText;
-    public TextMeshProUGUI fullAutoText;
+    public WeaponUIManager uiManager;
 
     [Header("Recoil & Spread")]
     public float baseSpread = 0.01f;
@@ -24,42 +14,53 @@ public class WeaponFire : MonoBehaviour
     public float spreadRecoveryRate = 0.02f;
     private float currentSpread = 0f;
 
-    [Header("Crosshair Animation")]
-    public float crosshairExpandAmount = 10f;
-    public float crosshairRecoverySpeed = 2f;
-    private Vector2 originalCrosshairSize;
-    private bool isFiring = false;
-
     private float nextFireTime = 0f;
     private bool isReloading = false;
-    private Coroutine noAmmoCoroutine;
     private bool isFullAuto = false;
+    private bool isFiring = false;
 
     private void Start()
     {
         GlobalVariables.playerPrimaryAmmo = weapon.magazineSize;
         GlobalVariables.playerPrimaryTotalAmmo = weapon.magazineSize * 4;
 
-        originalCrosshairSize = crosshair.rectTransform.sizeDelta;
-        UpdateAmmoUI();
-        UpdateFireModeUI();
+        uiManager.UpdateAmmoUI(GlobalVariables.playerPrimaryAmmo, GlobalVariables.playerPrimaryTotalAmmo);
+
+        if (weapon.hasFireType)
+        {
+            uiManager.UpdateFireModeUI(isFullAuto, weapon.hasFireType);
+        }
+        else
+        {
+            uiManager.fireModeText.SetActive(false);
+        }
     }
 
     private void Update()
     {
         if (isReloading) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (weapon.hasFireType)
         {
-            isFullAuto = !isFullAuto;
-            UpdateFireModeUI();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isFullAuto = !isFullAuto;
+                uiManager.UpdateFireModeUI(isFullAuto, weapon.hasFireType);
+            }
         }
 
-        if (isFullAuto && Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        if (weapon.hasFireType)
         {
-            TryShoot();
+            if (isFullAuto && Input.GetButton("Fire1") && Time.time >= nextFireTime)
+            {
+                TryShoot();
+            }
+            else if (!isFullAuto && Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+            {
+                TryShoot();
+            }
         }
-        else if (!isFullAuto && Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        else if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
         {
             TryShoot();
         }
@@ -69,17 +70,17 @@ public class WeaponFire : MonoBehaviour
             if (GlobalVariables.playerPrimaryTotalAmmo > 0)
                 StartCoroutine(Reload());
             else
-                ShowNoAmmoWarning();
+                uiManager.ShowNoAmmoWarning();
         }
 
         if (!isFiring)
         {
             currentSpread = Mathf.Max(currentSpread - spreadRecoveryRate * Time.deltaTime, baseSpread);
-            crosshair.rectTransform.sizeDelta = Vector2.Lerp(crosshair.rectTransform.sizeDelta, originalCrosshairSize, Time.deltaTime * crosshairRecoverySpeed);
+            uiManager.RecoverCrosshair();
         }
 
         isFiring = false;
-        UpdateAmmoUI();
+        uiManager.UpdateAmmoUI(GlobalVariables.playerPrimaryAmmo, GlobalVariables.playerPrimaryTotalAmmo);
     }
 
     private void TryShoot()
@@ -89,7 +90,7 @@ public class WeaponFire : MonoBehaviour
             if (GlobalVariables.playerPrimaryTotalAmmo > 0)
                 StartCoroutine(Reload());
             else
-                ShowNoAmmoWarning();
+                uiManager.ShowNoAmmoWarning();
             return;
         }
 
@@ -127,15 +128,13 @@ public class WeaponFire : MonoBehaviour
         }
 
         GlobalVariables.playerPrimaryAmmo--;
-        UpdateAmmoUI();
+        uiManager.UpdateAmmoUI(GlobalVariables.playerPrimaryAmmo, GlobalVariables.playerPrimaryTotalAmmo);
     }
 
     private void IncreaseRecoil()
     {
         currentSpread = Mathf.Min(currentSpread + spreadIncreaseRate, maxSpread);
-
-        Vector2 newSize = originalCrosshairSize + new Vector2(crosshairExpandAmount, crosshairExpandAmount);
-        crosshair.rectTransform.sizeDelta = Vector2.Lerp(crosshair.rectTransform.sizeDelta, newSize, Time.deltaTime * 10f);
+        uiManager.ExpandCrosshair();
     }
 
     private Vector3 GetRecoilOffset()
@@ -149,11 +148,8 @@ public class WeaponFire : MonoBehaviour
     {
         isReloading = true;
         weapon.gameObject.SetActive(false);
-        crosshair.gameObject.SetActive(false);
-
-        ammoText.SetActive(false);
-        reloadingText.gameObject.SetActive(true);
-        reloadingText.text = "Reloading...";
+        uiManager.ammoText.gameObject.SetActive(false);
+        uiManager.ShowReloadingText("Reloading...");
 
         yield return new WaitForSeconds(weapon.reloadTime);
 
@@ -164,62 +160,10 @@ public class WeaponFire : MonoBehaviour
         GlobalVariables.playerPrimaryTotalAmmo -= ammoToReload;
 
         weapon.gameObject.SetActive(true);
-        crosshair.gameObject.SetActive(true);
         isReloading = false;
 
-        ammoText.SetActive(true);
-        reloadingText.gameObject.SetActive(false);
-
-        UpdateAmmoUI();
-    }
-
-    private void ShowNoAmmoWarning()
-    {
-        ammoText.gameObject.SetActive(false);
-
-        if (noAmmoCoroutine != null) StopCoroutine(noAmmoCoroutine);
-        reloadingText.gameObject.SetActive(true);
-        reloadingText.text = "No Ammo!";
-        noAmmoCoroutine = StartCoroutine(AnimateNoAmmoText());
-    }
-
-    private IEnumerator AnimateNoAmmoText()
-    {
-        float duration = 1f;
-        float elapsedTime = 0f;
-        Color startColor = Color.red;
-        Color endColor = Color.black;
-
-        while (true)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = Mathf.PingPong(elapsedTime / duration, 1);
-            reloadingText.color = Color.Lerp(startColor, endColor, t);
-            yield return null;
-        }
-    }
-
-    private void UpdateAmmoUI()
-    {
-        ammoLeftText.text = GlobalVariables.playerPrimaryAmmo.ToString();
-        totalAmmoText.text = GlobalVariables.playerPrimaryTotalAmmo.ToString();
-    }
-
-    private void UpdateFireModeUI()
-    {
-        if (isFullAuto)
-        {
-            semiAutoText.fontStyle = FontStyles.Normal;
-            semiAutoText.color = Color.black;
-            fullAutoText.fontStyle = FontStyles.Bold;
-            fullAutoText.color = Color.white;
-        }
-        else
-        {
-            semiAutoText.fontStyle = FontStyles.Bold;
-            semiAutoText.color = Color.white;
-            fullAutoText.fontStyle = FontStyles.Normal;
-            fullAutoText.color = Color.black;
-        }
+        uiManager.HideReloadingText();
+        uiManager.UpdateAmmoUI(GlobalVariables.playerPrimaryAmmo, GlobalVariables.playerPrimaryTotalAmmo);
+        uiManager.ammoText.gameObject.SetActive(true);
     }
 }
