@@ -170,10 +170,6 @@ MonoBehaviour:
   weapon: {fileID: 6425018214998008481}
   impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   uiManager: {fileID: 0}
-  baseSpread: 0.01
-  maxSpread: 0.1
-  spreadIncreaseRate: 0.005
-  spreadRecoveryRate: 0.02
 --- !u!1 &7379162008913856938
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,10 +366,6 @@ PrefabInstance:
     - target: {fileID: 6770335009891668618, guid: c0e2857db1d958a4798e8de45c656b8e, type: 3}
       propertyPath: fireRate
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6770335009891668618, guid: c0e2857db1d958a4798e8de45c656b8e, type: 3}
-      propertyPath: magazineSize
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4931880219251408804, guid: c0e2857db1d958a4798e8de45c656b8e, type: 3}

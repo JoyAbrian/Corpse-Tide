@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
     [Header("Weapon UI")]
     public string weaponName;
     public Sprite weaponIcon;
+    public int weaponPrice;
 
     [Header("Weapon Stats")]
     public bool hasFireType;

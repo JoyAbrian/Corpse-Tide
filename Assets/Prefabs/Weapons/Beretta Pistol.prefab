@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7096865016324944280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4205456365493013148}
+  m_Layer: 0
+  m_Name: Bullet Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4205456365493013148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096865016324944280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.006, y: 1.748, z: 3.284}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2560587071667874311}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &2595112550446517740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,12 +101,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f467bd47d102d2b49b2cbe8fdf45577c, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 4205456365493013148}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f467bd47d102d2b49b2cbe8fdf45577c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 583213174255650526}
   m_SourcePrefab: {fileID: 100100000, guid: f467bd47d102d2b49b2cbe8fdf45577c, type: 3}
+--- !u!4 &2560587071667874311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f467bd47d102d2b49b2cbe8fdf45577c, type: 3}
+  m_PrefabInstance: {fileID: 2595112550446517740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2937148280326910141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f467bd47d102d2b49b2cbe8fdf45577c, type: 3}
@@ -94,12 +133,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Baretta Pistol
-  weaponIcon: {fileID: 0}
-  damage: 10
-  range: 100
-  fireRate: 0.5
-  impactForce: 30
-  reloadTime: 2
-  magazineSize: 30
-  bulletOut: {fileID: 0}
-  gunshotEffect: {fileID: 0}
+  weaponIcon: {fileID: 21300000, guid: cf8e31d1a106b9b49a128668cf34b2ea, type: 3}
+  weaponPrice: 500
+  hasFireType: 0
+  damage: 25
+  range: 50
+  fireRate: 0.25
+  impactForce: 15
+  reloadTime: 1.5
+  magazineSize: 15
+  baseSpread: 0.02
+  maxSpread: 0.08
+  spreadIncreaseRate: 0.004
+  spreadRecoveryRate: 0.025
+  currentSpread: 0
+  bulletOut: {fileID: 4205456365493013148}
+  gunshotEffect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
