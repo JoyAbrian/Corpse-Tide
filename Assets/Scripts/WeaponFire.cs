@@ -7,13 +7,6 @@ public class WeaponFire : MonoBehaviour
     public GameObject impactEffect;
     public WeaponUIManager uiManager;
 
-    [Header("Recoil & Spread")]
-    public float baseSpread = 0.01f;
-    public float maxSpread = 0.1f;
-    public float spreadIncreaseRate = 0.005f;
-    public float spreadRecoveryRate = 0.02f;
-    private float currentSpread = 0f;
-
     private float nextFireTime = 0f;
     private bool isReloading = false;
     private bool isFullAuto = false;
@@ -75,7 +68,7 @@ public class WeaponFire : MonoBehaviour
 
         if (!isFiring)
         {
-            currentSpread = Mathf.Max(currentSpread - spreadRecoveryRate * Time.deltaTime, baseSpread);
+            weapon.currentSpread = Mathf.Max(weapon.currentSpread - weapon.spreadRecoveryRate * Time.deltaTime, weapon.baseSpread);
             uiManager.RecoverCrosshair();
         }
 
@@ -133,14 +126,14 @@ public class WeaponFire : MonoBehaviour
 
     private void IncreaseRecoil()
     {
-        currentSpread = Mathf.Min(currentSpread + spreadIncreaseRate, maxSpread);
+        weapon.currentSpread = Mathf.Min(weapon.currentSpread + weapon.spreadIncreaseRate, weapon.maxSpread);
         uiManager.ExpandCrosshair();
     }
 
     private Vector3 GetRecoilOffset()
     {
-        float recoilX = Random.Range(-currentSpread, currentSpread);
-        float recoilY = Random.Range(-currentSpread, currentSpread);
+        float recoilX = Random.Range(-weapon.currentSpread, weapon.currentSpread);
+        float recoilY = Random.Range(-weapon.currentSpread, weapon.currentSpread);
         return new Vector3(recoilX * Screen.width, recoilY * Screen.height, 0);
     }
 

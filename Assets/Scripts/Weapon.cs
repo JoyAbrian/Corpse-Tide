@@ -15,6 +15,13 @@ public class Weapon : MonoBehaviour
     public float reloadTime = 2f;
     public int magazineSize = 30;
 
+    [Header("Recoil & Spread")]
+    public float baseSpread = 0.02f;
+    public float maxSpread = 0.08f;
+    public float spreadIncreaseRate = 0.004f;
+    public float spreadRecoveryRate = 0.025f;
+    public float currentSpread;
+
     [Header("Weapon Components")]
     public Transform bulletOut;
     public GameObject gunshotEffect;
