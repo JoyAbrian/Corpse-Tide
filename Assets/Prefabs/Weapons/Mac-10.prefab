@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &889650733230118368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927521982421366650}
+  m_Layer: 0
+  m_Name: Bullet Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927521982421366650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889650733230118368}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.36, y: 16.96, z: 26.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7307471346168474246}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &7125788643830713709
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.104
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9974595
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.07123639
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -8.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      propertyPath: m_Name
+      value: Mac-10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 927521982421366650}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7897859975513110782}
+  m_SourcePrefab: {fileID: 100100000, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+--- !u!4 &7307471346168474246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+  m_PrefabInstance: {fileID: 7125788643830713709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7936058143363559484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d20f778e0f43a348bf1b8ecf382b5c0, type: 3}
+  m_PrefabInstance: {fileID: 7125788643830713709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7897859975513110782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7936058143363559484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5be53a1af2d8848b2ee704b3386254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Mac-10
+  weaponIcon: {fileID: 21300000, guid: bc281adef4b9a7249b0cb738d9a9688c, type: 3}
+  weaponPrice: 1050
+  hasFireType: 0
+  damage: 29
+  range: 50
+  fireRate: 0.065
+  impactForce: 14
+  reloadTime: 2.3
+  magazineSize: 30
+  baseSpread: 0.03
+  maxSpread: 0.12
+  spreadIncreaseRate: 0.0075
+  spreadRecoveryRate: 0.02
+  currentSpread: 0
+  bulletOut: {fileID: 927521982421366650}
+  gunshotEffect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}

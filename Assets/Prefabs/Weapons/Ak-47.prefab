@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4632976759199577194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4932049675630159300}
+  m_Layer: 0
+  m_Name: Bullet Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4932049675630159300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632976759199577194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 189.2, y: 88.6, z: 5.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3199935422541006630}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3162315483303272653
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.243
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.212
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7563164
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.03746171
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.65168387
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.04347646
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -81.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -6.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      propertyPath: m_Name
+      value: Ak-47
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4932049675630159300}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1308053391903002998}
+  m_SourcePrefab: {fileID: 100100000, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+--- !u!1 &2820279196286147996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+  m_PrefabInstance: {fileID: 3162315483303272653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1308053391903002998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820279196286147996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5be53a1af2d8848b2ee704b3386254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: AK-47
+  weaponIcon: {fileID: 21300000, guid: f91023d52aaf58c47a749fd23ea2d5b9, type: 3}
+  weaponPrice: 2700
+  hasFireType: 1
+  damage: 45
+  range: 140
+  fireRate: 0.1
+  impactForce: 30
+  reloadTime: 2.6
+  magazineSize: 30
+  baseSpread: 0.035
+  maxSpread: 0.15
+  spreadIncreaseRate: 0.01
+  spreadRecoveryRate: 0.018
+  currentSpread: 0
+  bulletOut: {fileID: 4932049675630159300}
+  gunshotEffect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
+--- !u!4 &3199935422541006630 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c00795a69a45bf445b1f3e8a7c1fa087, type: 3}
+  m_PrefabInstance: {fileID: 3162315483303272653}
+  m_PrefabAsset: {fileID: 0}
