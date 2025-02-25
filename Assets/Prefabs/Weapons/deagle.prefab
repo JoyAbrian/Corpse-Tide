@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deagle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 696f2b3f0e8efe544892d7a3afa94ec6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -146,6 +150,6 @@ MonoBehaviour:
   maxSpread: 0.12
   spreadIncreaseRate: 0.007
   spreadRecoveryRate: 0.02
-  currentSpread: 0
+  currentSpread: 0.03
   bulletOut: {fileID: 3468568014497808527}
   gunshotEffect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
