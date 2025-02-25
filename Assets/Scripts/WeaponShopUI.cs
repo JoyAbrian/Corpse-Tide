@@ -8,6 +8,7 @@ public class WeaponShopUI : MonoBehaviour
 {
     public WeaponFire weaponFire;
     public GameObject weaponPrimary;
+    public WeaponUIManager WeaponUI;
     [SerializeField] private List<Weapon> weapons;
 
     [Header("UI Elements")]
@@ -48,6 +49,8 @@ public class WeaponShopUI : MonoBehaviour
 
         Weapon newWeapon = newWeaponObj.GetComponent<Weapon>();
         weaponFire.weapon = newWeapon;
+
+        WeaponUI.SelectWeapon(newWeapon);
 
         GlobalVariables.playerMoney -= weapon.weaponPrice;
         GlobalVariables.playerPrimaryAmmo = newWeapon.magazineSize;

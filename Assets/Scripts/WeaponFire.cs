@@ -9,7 +9,7 @@ public class WeaponFire : MonoBehaviour
 
     private float nextFireTime = 0f;
     private bool isReloading = false;
-    private bool isFullAuto = false;
+    public static bool isFullAuto = false;
     private bool isFiring = false;
 
     private void Start()

@@ -119,4 +119,11 @@ public class WeaponUIManager : MonoBehaviour
             weaponIconImage.sprite = newIcon;
         }
     }
+
+    public void SelectWeapon(Weapon weapon)
+    {
+        UpdateWeaponIcon(weapon.weaponIcon);
+        UpdateAmmoUI(GlobalVariables.playerPrimaryAmmo, GlobalVariables.playerPrimaryTotalAmmo);
+        UpdateFireModeUI(WeaponFire.isFullAuto, weapon.hasFireType);
+    }
 }
